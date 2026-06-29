@@ -3,60 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brandon Bussey | AI-First RevOps Executive</title>
-  <meta name="description" content="Brandon Bussey is an AI-first Revenue Operations executive specializing in PE-backed B2B SaaS. Builder of the Three Engines framework. 5x M&A integration. 20 years in GTM." />
+  <title>Brandon Bussey | Operating Executive, Revenue Infrastructure</title>
+  <meta name="description" content="Brandon Bussey is an operating executive who builds and runs revenue infrastructure — 20 years across RevOps and GTM at Amazon, Concur, Qualtrics, Lucid Software, Entrata, and Advantive." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Brandon Bussey | AI-First RevOps Executive" />
-  <meta property="og:description" content="Brandon Bussey is an AI-first Revenue Operations executive specializing in PE-backed B2B SaaS. Builder of the Three Engines framework. 5x M&A integration. 20 years in GTM." />
+  <meta property="og:title" content="Brandon Bussey | Operating Executive, Revenue Infrastructure" />
+  <meta property="og:description" content="20 years building and running revenue infrastructure across RevOps and GTM. 6x M&A integration." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bbussey.com" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Brandon Bussey | AI-First RevOps Executive" />
-  <meta name="twitter:description" content="AI-first Revenue Operations executive. PE-backed B2B SaaS specialist. Builder of the Three Engines framework." />
+  <meta name="twitter:title" content="Brandon Bussey | Operating Executive, Revenue Infrastructure" />
+  <meta name="twitter:description" content="20 years building and running revenue infrastructure across RevOps and GTM." />
 
-  <!-- Canonical -->
   <link rel="canonical" href="https://bbussey.com" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     /* ─── TOKENS ─────────────────────────────────────────────────── */
     :root {
-      --ink:      #0f1114;
-      --slate:    #1b2028;
-      --mid:      #2c3340;
-      --muted:    #6b7280;
-      --bone:     #f0ece4;
-      --white:    #fafaf9;
-      --gold:     #c9a84c;
-      --gold-dim: #9b7e37;
+      --ink:          #1A3A3A;   /* primary text — deep teal-black */
+      --ink-soft:     #4A6060;   /* secondary text */
+      --muted:        #7A9898;   /* tertiary / labels */
+      --line:         #DDD8CC;   /* hairline dividers */
+      --paper:        #FDFAF4;   /* page background — tide white */
+      --sand:         #F0EAD8;   /* stat bar, panel backgrounds */
+      --sand-deep:    #E8DFC8;   /* deeper sand for borders/accents */
+      --teal:         #2E7E7E;   /* primary accent */
+      --teal-dark:    #1A3A3A;   /* nav, headings */
+      --teal-mid:     #6AADAD;   /* muted accent, nav links */
+      --white:        #FFFFFF;
 
-      --display:  'Barlow Condensed', sans-serif;
-      --body:     'Inter', sans-serif;
+      --serif:   'DM Serif Display', Georgia, serif;
+      --sans:    'Inter', -apple-system, sans-serif;
 
-      --max:      1080px;
-      --gap:      clamp(2rem, 5vw, 4rem);
+      --max:     1080px;
+      --content: 760px;
+      --gap:     clamp(2.5rem, 6vw, 5rem);
+      --r:       8px;   /* shared border-radius */
     }
 
-    /* ─── RESET ──────────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      background: var(--ink);
-      color: var(--bone);
-      font-family: var(--body);
-      font-size: clamp(15px, 1.6vw, 17px);
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: clamp(15px, 1.5vw, 16px);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
-    a { color: inherit; text-decoration: none; }
+    a { color: var(--teal); text-decoration: none; }
+    a:hover { text-decoration: underline; }
     img { display: block; max-width: 100%; }
+    :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
 
     /* ─── LAYOUT ─────────────────────────────────────────────────── */
     .container {
@@ -64,408 +66,313 @@
       margin: 0 auto;
       padding: 0 clamp(1.25rem, 5vw, 3rem);
     }
+    section { padding: var(--gap) 0; }
+    hr.divider { border: none; border-top: 1px solid var(--line); margin: 0; }
 
-    section {
-      padding: var(--gap) 0;
-    }
-
-    .section-label {
-      font-family: var(--body);
+    .eyebrow {
       font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
+      font-weight: 600;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 2rem;
+      color: var(--teal);
+      margin-bottom: 0.85rem;
     }
 
-    hr.divider {
-      border: none;
-      border-top: 1px solid var(--mid);
-      margin: 0;
+    h1, h2, h3 {
+      font-family: var(--serif);
+      color: var(--ink);
+      letter-spacing: 0;
+      font-weight: 400;
     }
+
+    /* ─── HEADER / NAV ───────────────────────────────────────────── */
+    header {
+      background: var(--teal-dark);
+      padding: 1.35rem 0;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .wordmark {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: var(--sand-deep);
+      letter-spacing: 0.01em;
+    }
+    nav { display: flex; gap: 1.75rem; }
+    nav a {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--teal-mid);
+    }
+    nav a:hover { color: var(--sand-deep); text-decoration: none; }
 
     /* ─── HERO ───────────────────────────────────────────────────── */
     #hero {
-      padding-top: clamp(4rem, 10vw, 8rem);
-      padding-bottom: clamp(3rem, 8vw, 6rem);
+      background: var(--paper);
+      padding-top: clamp(3rem, 7vw, 5.5rem);
+      padding-bottom: 0;
     }
-
-    .hero-eyebrow {
-      font-family: var(--body);
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: start;
+      padding-bottom: clamp(2rem, 5vw, 3.5rem);
     }
-
     h1 {
-      font-family: var(--display);
-      font-size: clamp(3.5rem, 9vw, 7.5rem);
-      font-weight: 700;
-      line-height: 0.93;
-      letter-spacing: -0.01em;
-      color: var(--white);
-      margin-bottom: 2rem;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      line-height: 1.1;
+      margin-bottom: 1.1rem;
+      color: var(--ink);
     }
-
-    h1 span.accent {
-      color: var(--gold);
+    h1 em {
+      font-style: italic;
+      color: var(--teal);
     }
-
     .hero-sub {
-      max-width: 580px;
-      color: var(--bone);
-      opacity: 0.75;
-      font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+      color: var(--ink-soft);
+      font-size: clamp(0.95rem, 1.5vw, 1.05rem);
       line-height: 1.7;
-      margin-bottom: 2.5rem;
+      max-width: 580px;
+    }
+    .headshot {
+      width: 156px;
+      height: 156px;
+      border-radius: var(--r);
+      object-fit: cover;
+      background: var(--sand);
+      border: 1px solid var(--line);
     }
 
-    .hero-stats {
+    /* ─── STAT BAR ───────────────────────────────────────────────── */
+    .stat-bar {
+      background: var(--sand);
+      border-top: 1px solid var(--sand-deep);
+    }
+    .stat-bar .container {
       display: flex;
-      gap: 2.5rem;
+      gap: 3rem;
       flex-wrap: wrap;
-      margin-top: 2.5rem;
+      padding-top: 1.75rem;
+      padding-bottom: 1.75rem;
     }
-
-    .stat {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-
+    .stat { display: flex; flex-direction: column; gap: 0.2rem; }
     .stat-number {
-      font-family: var(--display);
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 700;
-      color: var(--white);
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+      color: var(--ink);
       line-height: 1;
     }
-
     .stat-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
+      font-size: 0.62rem;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
       color: var(--muted);
     }
 
-    .stat-divider {
-      width: 1px;
-      background: var(--mid);
-      align-self: stretch;
-    }
-
     /* ─── ABOUT ──────────────────────────────────────────────────── */
-    #about {
-      background: var(--slate);
-    }
-
-    #about .container {
-      padding-top: var(--gap);
-      padding-bottom: var(--gap);
-    }
-
+    #about { background: var(--paper); }
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 2fr;
       gap: 4rem;
       align-items: start;
     }
-
     .about-left h2 {
-      font-family: var(--display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      line-height: 1.05;
-      color: var(--white);
+      font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+      line-height: 1.15;
       margin-bottom: 1.5rem;
     }
-
     .about-companies {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
-      margin-top: 2rem;
+      margin-top: 1.25rem;
     }
-
     .company-item {
       font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      color: var(--ink-soft);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .company-item:first-child { border-top: 1px solid var(--line); }
+    .company-item .tag {
+      font-size: 0.62rem;
+      color: var(--teal);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-left: 0.5rem;
+    }
+    .about-right p {
+      color: var(--ink-soft);
+      margin-bottom: 1.1rem;
+      font-size: clamp(0.93rem, 1.4vw, 1rem);
+      line-height: 1.72;
+    }
+    .about-right p:last-child { margin-bottom: 0; }
+
+    /* ─── SELECTED WORK ──────────────────────────────────────────── */
+    #work { background: var(--sand); }
+    .work-header { margin-bottom: 2.5rem; }
+    .work-header h2 {
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      margin-bottom: 0.5rem;
+    }
+    .work-header p { color: var(--muted); font-size: 0.9rem; max-width: 520px; }
+
+    .case-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .case-study {
+      background: var(--paper);
+      border-radius: var(--r);
+      padding: 1.75rem 2rem;
+      border: 1px solid var(--sand-deep);
+    }
+    .case-meta {
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
+      margin-bottom: 1.1rem;
+      flex-wrap: wrap;
+    }
+    .case-title {
+      font-family: var(--serif);
+      font-size: clamp(1.05rem, 1.9vw, 1.2rem);
+      color: var(--ink);
+    }
+    .case-org {
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .case-block h4 {
+      font-size: 0.62rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--muted);
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--mid);
-    }
-
-    .about-right p {
-      color: var(--bone);
-      opacity: 0.82;
-      margin-bottom: 1.2rem;
-      font-size: clamp(0.95rem, 1.6vw, 1.05rem);
-    }
-
-    .about-right p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* ─── THREE ENGINES ──────────────────────────────────────────── */
-    #framework {
-      padding-top: var(--gap);
-      padding-bottom: var(--gap);
-    }
-
-    .framework-header {
-      margin-bottom: 3rem;
-    }
-
-    .framework-header h2 {
-      font-family: var(--display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.75rem;
-    }
-
-    .framework-header p {
-      color: var(--muted);
-      max-width: 560px;
-      font-size: 0.95rem;
-    }
-
-    /* THE SIGNATURE ELEMENT: three vertical columns with gold top-rule */
-    .engines-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      border: 1px solid var(--mid);
-    }
-
-    .engine {
-      padding: 2rem 1.75rem 2.25rem;
-      position: relative;
-      border-right: 1px solid var(--mid);
-    }
-
-    .engine:last-child {
-      border-right: none;
-    }
-
-    .engine::before {
-      content: '';
-      display: block;
-      height: 3px;
-      background: var(--gold);
-      position: absolute;
-      top: 0; left: 0; right: 0;
-    }
-
-    .engine-number {
-      font-family: var(--display);
-      font-size: 0.75rem;
+      margin-bottom: 0.4rem;
       font-weight: 600;
-      letter-spacing: 0.2em;
-      color: var(--gold-dim);
-      margin-bottom: 1rem;
+      font-family: var(--sans);
     }
-
-    .engine h3 {
-      font-family: var(--display);
-      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-
-    .engine p {
-      font-size: 0.88rem;
-      color: var(--bone);
-      opacity: 0.7;
-      line-height: 1.65;
-      margin-bottom: 1.25rem;
-    }
-
-    .engine-examples {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .engine-example {
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-      color: var(--gold-dim);
-      text-transform: uppercase;
-      padding-left: 0.75rem;
-      position: relative;
-    }
-
-    .engine-example::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--gold-dim);
-    }
-
-    .framework-footer {
-      margin-top: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .framework-footer p {
+    .case-block p {
       font-size: 0.85rem;
-      color: var(--muted);
+      color: var(--ink-soft);
+      line-height: 1.58;
     }
 
+    /* ─── WRITING ────────────────────────────────────────────────── */
+    #writing { background: var(--paper); }
+    .writing-header { margin-bottom: 2rem; }
+    .writing-header h2 {
+      font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+      margin-bottom: 0.5rem;
+    }
+    .writing-header p { color: var(--muted); font-size: 0.9rem; max-width: 520px; }
+
+    .articles-list { display: flex; flex-direction: column; }
+    .article-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--line);
+      transition: opacity 0.15s;
+    }
+    .article-row:first-child { border-top: 1px solid var(--line); }
+    .article-row.placeholder { opacity: 0.5; cursor: default; }
+    .article-tag {
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      border: 1px solid var(--teal-mid);
+      border-radius: 4px;
+      padding: 0.22rem 0.55rem;
+      white-space: nowrap;
+    }
+    .article-tag.ai { color: var(--ink-soft); border-color: var(--line); }
+    .article-title { font-size: 0.96rem; font-weight: 600; color: var(--ink); }
+    .article-meta { font-size: 0.75rem; color: var(--muted); margin-top: 0.1rem; }
+    .article-arrow { font-size: 1rem; color: var(--teal-mid); flex-shrink: 0; }
+
+    /* ─── ADVISORY ───────────────────────────────────────────────── */
+    #advisory { background: var(--sand); }
+    #advisory .container {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+    #advisory h2 {
+      font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+      margin-bottom: 0.6rem;
+    }
+    #advisory p { color: var(--ink-soft); max-width: 500px; font-size: 0.95rem; }
     .btn-outline {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      border: 1px solid var(--gold-dim);
-      color: var(--gold);
-      font-family: var(--body);
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.6rem 1.25rem;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .btn-outline:hover {
-      background: var(--gold);
-      color: var(--ink);
-    }
-
-    /* ─── WRITING ────────────────────────────────────────────────── */
-    #writing {
-      background: var(--slate);
-    }
-
-    #writing .container {
-      padding-top: var(--gap);
-      padding-bottom: var(--gap);
-    }
-
-    .writing-header {
-      margin-bottom: 2.5rem;
-    }
-
-    .writing-header h2 {
-      font-family: var(--display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      color: var(--white);
-    }
-
-    .articles-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .article-row {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 2rem;
-      padding: 1.5rem 0;
-      border-bottom: 1px solid var(--mid);
-      transition: opacity 0.15s;
-    }
-
-    .article-row:first-child {
-      border-top: 1px solid var(--mid);
-    }
-
-    .article-row.placeholder {
-      opacity: 0.4;
-      cursor: default;
-    }
-
-    .article-title {
-      font-family: var(--display);
-      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      border: 1.5px solid var(--teal);
+      color: var(--teal);
+      font-size: 0.8rem;
       font-weight: 600;
-      color: var(--white);
-      margin-bottom: 0.25rem;
+      letter-spacing: 0.03em;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--r);
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
     }
-
-    .article-meta {
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .article-arrow {
-      font-size: 1.2rem;
-      color: var(--gold-dim);
-      flex-shrink: 0;
-    }
-
-    .article-row:not(.placeholder):hover .article-arrow {
-      color: var(--gold);
-    }
+    .btn-outline:hover { background: var(--teal); color: var(--white); text-decoration: none; }
 
     /* ─── CONNECT ────────────────────────────────────────────────── */
-    #connect {
-      padding-top: clamp(4rem, 8vw, 7rem);
-      padding-bottom: clamp(4rem, 8vw, 7rem);
-      text-align: center;
-    }
-
+    #connect { background: var(--teal-dark); }
     #connect h2 {
-      font-family: var(--display);
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1;
-      margin-bottom: 1.25rem;
+      font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+      color: var(--sand-deep);
+      margin-bottom: 1rem;
     }
-
-    #connect h2 span {
-      color: var(--gold);
-    }
-
     #connect p {
-      color: var(--muted);
-      max-width: 420px;
-      margin: 0 auto 2.5rem;
-      font-size: 0.95rem;
+      color: var(--teal-mid);
+      max-width: 460px;
+      margin-bottom: 1.75rem;
+      font-size: 0.98rem;
+      line-height: 1.7;
     }
-
     .btn-primary {
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
-      background: var(--gold);
-      color: var(--ink);
-      font-family: var(--body);
+      background: var(--teal);
+      color: var(--white);
       font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.9rem 2rem;
-      transition: background 0.2s;
+      font-weight: 600;
+      padding: 0.85rem 1.65rem;
+      border-radius: var(--r);
+      transition: background 0.15s;
     }
-
-    .btn-primary:hover {
-      background: #e0b85a;
-    }
+    .btn-primary:hover { background: #235f5f; text-decoration: none; }
 
     /* ─── FOOTER ─────────────────────────────────────────────────── */
     footer {
-      border-top: 1px solid var(--mid);
-      padding: 1.5rem 0;
+      background: var(--teal-dark);
+      border-top: 1px solid #253F3F;
+      padding: 1.35rem 0;
     }
-
     footer .container {
       display: flex;
       justify-content: space-between;
@@ -473,159 +380,136 @@
       flex-wrap: wrap;
       gap: 0.75rem;
     }
-
-    footer p {
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
+    footer p { font-size: 0.72rem; color: var(--muted); }
 
     /* ─── RESPONSIVE ─────────────────────────────────────────────── */
-    @media (max-width: 720px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .engines-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .engine {
-        border-right: none;
-        border-bottom: 1px solid var(--mid);
-      }
-
-      .engine:last-child {
-        border-bottom: none;
-      }
-
-      .hero-stats {
-        gap: 1.5rem;
-      }
-
-      .stat-divider {
-        display: none;
-      }
-
-      .article-row {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-      }
-
-      .article-arrow {
-        display: none;
-      }
+    @media (max-width: 760px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .headshot { width: 88px; height: 88px; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .case-grid { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+      #advisory .container { grid-template-columns: 1fr; }
+      .stat-bar .container { gap: 1.75rem; }
     }
-
     @media (max-width: 480px) {
-      h1 {
-        font-size: 3rem;
-      }
+      .case-grid { grid-template-columns: 1fr; }
+      .article-row { grid-template-columns: 1fr; gap: 0.4rem; }
+      .article-arrow { display: none; }
+      .case-study { padding: 1.25rem 1.25rem; }
     }
-
-    /* ─── REDUCED MOTION ─────────────────────────────────────────── */
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition: none !important; }
     }
   </style>
 
-  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Brandon Bussey",
     "jobTitle": "VP Revenue Operations",
-    "description": "AI-first Revenue Operations executive specializing in PE-backed B2B SaaS. Builder of the Three Engines framework. 5x M&A integration. 20 years in GTM.",
+    "description": "Operating executive who builds and runs revenue infrastructure — 20 years across RevOps and GTM. 6x M&A integration.",
     "url": "https://bbussey.com",
-    "sameAs": [
-      "https://linkedin.com/in/brandonbussey",
-      "https://github.com/bbussey000/three-engines-revops"
-    ],
-    "knowsAbout": [
-      "Revenue Operations",
-      "AI-first GTM",
-      "PE-backed SaaS",
-      "M&A Integration",
-      "Agentic Workflow",
-      "B2B SaaS"
-    ]
+    "sameAs": ["https://linkedin.com/in/brandonbussey"],
+    "knowsAbout": ["Revenue Operations","Revenue Enablement","PE-backed SaaS","M&A Integration","AI Adoption","GTM Strategy"]
   }
   </script>
 </head>
 
 <body>
 
-  <!-- ── HERO ────────────────────────────────────────────────────── -->
+  <header>
+    <div class="container">
+      <span class="wordmark">Brandon Bussey</span>
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#writing">Writing</a>
+        <a href="#advisory">Advisory</a>
+        <a href="#connect">Connect</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── HERO ─────────────────────────────────────────────────────── -->
   <section id="hero">
     <div class="container">
-      <p class="hero-eyebrow">AI-First RevOps Executive &nbsp;·&nbsp; PE-Backed B2B SaaS</p>
-      <h1>Brandon<br /><span class="accent">Bussey.</span></h1>
-      <p class="hero-sub">
-        I build AI-first revenue operations systems for PE-backed B2B SaaS companies.
-        Not optimized functions — operating systems that scale without headcount.
-      </p>
-
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">20</span>
-          <span class="stat-label">Years in GTM</span>
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">Operating Executive · Revenue Infrastructure</p>
+          <h1>Revenue that <em>holds</em><br/>under board scrutiny.</h1>
+          <p class="hero-sub">
+            I build and run the GTM operating systems that PE-backed SaaS companies
+            depend on — AI governance, M&amp;A integration, forecasting infrastructure,
+            and the comp and partner programs that hold them together.
+            20 years across RevOps and GTM.
+          </p>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">5×</span>
-          <span class="stat-label">M&amp;A Integrations</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">L3</span>
-          <span class="stat-label">AI Maturity Target</span>
-        </div>
+        <img class="headshot" src="headshot.jpg" alt="Brandon Bussey" />
       </div>
     </div>
   </section>
 
+  <!-- ── STAT BAR ──────────────────────────────────────────────────── -->
+  <div class="stat-bar">
+    <div class="container">
+      <div class="stat">
+        <span class="stat-number">20</span>
+        <span class="stat-label">Years, GTM &amp; RevOps</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">6×</span>
+        <span class="stat-label">M&amp;A Integrations</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">$6M+</span>
+        <span class="stat-label">Partner ARR Built</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">30%</span>
+        <span class="stat-label">GTM Tech Spend Cut</span>
+      </div>
+    </div>
+  </div>
+
   <hr class="divider" />
 
-  <!-- ── ABOUT ────────────────────────────────────────────────────── -->
+  <!-- ── ABOUT ─────────────────────────────────────────────────────── -->
   <section id="about">
     <div class="container">
       <div class="about-grid">
         <div class="about-left">
-          <p class="section-label">Background</p>
-          <h2>Operator,<br />not advisor.</h2>
+          <p class="eyebrow">Background</p>
+          <h2>Operator across finance and GTM.</h2>
           <div class="about-companies">
-            <span class="company-item">Advantive (Current)</span>
-            <span class="company-item">Unicorn Revenue Ops</span>
-            <span class="company-item">Entrata</span>
-            <span class="company-item">Lucid Software</span>
-            <span class="company-item">Qualtrics</span>
-            <span class="company-item">Amazon · Concur</span>
+            <div class="company-item">Advantive <span class="tag">Current</span></div>
+            <div class="company-item">Unicorn Revenue Operations</div>
+            <div class="company-item">Entrata</div>
+            <div class="company-item">Lucid Software</div>
+            <div class="company-item">Qualtrics</div>
+            <div class="company-item">Amazon · Concur</div>
           </div>
         </div>
 
         <div class="about-right">
           <p>
-            My career has been a repeating pattern: take a fragmented, reactive RevOps function
-            and rebuild it as a proactive, AI-native operating system that scales without headcount.
-            Five times across PE-backed and enterprise environments.
+            My career has been a repeating pattern: take a fragmented, reactive revenue
+            function and rebuild it as a proactive operating system — one that holds up
+            under board scrutiny because the finance logic and the GTM execution were
+            designed together, not bolted on after the fact. I've done this six times
+            across PE-backed and enterprise environments.
           </p>
           <p>
-            At Advantive — a PE-backed vertical software platform — I serve as VP of Revenue Operations
-            on the executive committee, leading an org across GM Strategy &amp; Performance, Revenue Enablement,
-            Revenue Systems, PS Ops, and Revenue Analytics.
+            At Advantive, a PE-backed vertical software platform, I serve as VP of Revenue
+            Operations, leading strategy and performance, revenue enablement, revenue systems,
+            and revenue analytics across the go-to-market organization. That includes building
+            the company's AI governance model, deploying AI-native tooling across the GTM org,
+            and running six M&amp;A integrations without pipeline disruption.
           </p>
           <p>
-            Before Advantive, I was a partner at Unicorn Revenue Operations, a GTM advisory practice,
-            and built RevOps functions across marketing, renewals, sales, pricing, deal desk,
-            order management, and billing at multiple PE-backed SaaS companies.
-          </p>
-          <p>
-            I've been featured on the RevOps Rockstars Podcast, spoken at Snowforce,
-            and published on AI infrastructure and GTM operating models.
+            Before Advantive, I was a partner at Unicorn Revenue Operations, a GTM advisory
+            practice, building revenue functions across marketing, renewals, sales, pricing,
+            deal desk, and billing for multiple PE-backed SaaS companies.
           </p>
         </div>
       </div>
@@ -634,76 +518,92 @@
 
   <hr class="divider" />
 
-  <!-- ── THREE ENGINES ─────────────────────────────────────────────── -->
-  <section id="framework">
+  <!-- ── SELECTED WORK ─────────────────────────────────────────────── -->
+  <section id="work">
     <div class="container">
-      <div class="framework-header">
-        <p class="section-label">Framework</p>
-        <h2>The Three Engines</h2>
-        <p>
-          Three accountability domains designed as one integrated system,
-          targeting AI maturity Level 3 — autonomous, agentic workflow
-          execution across the full GTM motion.
-        </p>
+      <div class="work-header">
+        <p class="eyebrow">Selected Work</p>
+        <h2>AI in production. Infrastructure that holds.</h2>
+        <p>Scope generalized where current engagements require it. Detail available on request.</p>
       </div>
 
-      <div class="engines-grid">
-        <div class="engine">
-          <p class="engine-number">ENGINE 01</p>
-          <h3>Business<br />Performance</h3>
-          <p>
-            The source-of-truth layer. Pipeline visibility, forecast accuracy,
-            board reporting, and GM-level accountability — replaced with
-            live CRM queries, not manual exports.
-          </p>
-          <div class="engine-examples">
-            <span class="engine-example">Live pipeline coverage</span>
-            <span class="engine-example">AI-native board reporting</span>
-            <span class="engine-example">GM strategy &amp; performance</span>
+      <div class="case-list">
+
+        <div class="case-study">
+          <div class="case-meta">
+            <span class="case-title">GTM AI Governance &amp; Tech Rationalization</span>
+            <span class="case-org">PE-Backed Vertical Software · $200M–$500M ARR</span>
+          </div>
+          <div class="case-grid">
+            <div class="case-block">
+              <h4>Scope</h4>
+              <p>Full GTM organization. AI was being adopted inconsistently — no ownership, no governance, duplicated vendors, real risk of bad outputs reaching customers.</p>
+            </div>
+            <div class="case-block">
+              <h4>Problem</h4>
+              <p>Sprawl, not strategy. Tools accumulated without accountability structures, solution design standards, or any mechanism to measure whether adoption generated return.</p>
+            </div>
+            <div class="case-block">
+              <h4>What I Built</h4>
+              <p>Audited all AI tool usage across the GTM org. Named agent ownership per tool and use case. Built a solution design process (problem → pilot → scale). Replaced legacy tools with AI-native alternatives inside existing seller workflows.</p>
+            </div>
+            <div class="case-block">
+              <h4>Outcome</h4>
+              <p>30% reduction in GTM tech spend with expanded functional capability. Pre-call intelligence delivered directly to seller inboxes. Governance model with clear decision rights in place across the org.</p>
+            </div>
           </div>
         </div>
 
-        <div class="engine">
-          <p class="engine-number">ENGINE 02</p>
-          <h3>Revenue<br />Capability</h3>
-          <p>
-            The scale layer. Enablement, onboarding, and content infrastructure
-            that compounds — built for agentic assembly, not manual production.
-          </p>
-          <div class="engine-examples">
-            <span class="engine-example">Agentic content assembly</span>
-            <span class="engine-example">Sales enablement systems</span>
-            <span class="engine-example">Revenue analytics</span>
+        <div class="case-study">
+          <div class="case-meta">
+            <span class="case-title">AI-Powered Sales Onboarding System</span>
+            <span class="case-org">PE-Backed Vertical Software · $200M–$500M ARR</span>
+          </div>
+          <div class="case-grid">
+            <div class="case-block">
+              <h4>Scope</h4>
+              <p>Full commercial sales org. Bootcamp certification and post-bootcamp ramp — from initial hire through quota attainment readiness.</p>
+            </div>
+            <div class="case-block">
+              <h4>Problem</h4>
+              <p>A 100% bootcamp pass rate was masking real rep readiness gaps. Post-bootcamp onboarding ran on manual weekly check-ins that couldn't scale. Problems surfaced at quota, not certification.</p>
+            </div>
+            <div class="case-block">
+              <h4>What I Built</h4>
+              <p>Restructured bootcamp certification around actual readiness indicators. Layered an AI system on top: machine-generated, rubric-driven onboarding plans using Hyperbound simulation tracks built from the company's own winning conversations, segmented by vertical.</p>
+            </div>
+            <div class="case-block">
+              <h4>Outcome</h4>
+              <p>Real readiness problems surfaced and addressed before reps hit quota. Manual check-in overhead eliminated. Each rep's onboarding path tied to the actual conversations that close deals in their vertical.</p>
+            </div>
           </div>
         </div>
 
-        <div class="engine">
-          <p class="engine-number">ENGINE 03</p>
-          <h3>Commercial<br />Workflow</h3>
-          <p>
-            The execution layer. Quote-to-cash, comp architecture, PS operations,
-            and deal desk — designed for AI-native execution, not human-in-the-loop
-            at every step.
-          </p>
-          <div class="engine-examples">
-            <span class="engine-example">AI-native comp design</span>
-            <span class="engine-example">PS ops &amp; order management</span>
-            <span class="engine-example">Deal desk &amp; billing</span>
+        <div class="case-study">
+          <div class="case-meta">
+            <span class="case-title">Post-Acquisition GTM Integration at Scale</span>
+            <span class="case-org">Multiple PE-Backed Platforms · 6 Acquisitions</span>
+          </div>
+          <div class="case-grid">
+            <div class="case-block">
+              <h4>Scope</h4>
+              <p>Six acquisitions across two companies — each with distinct sales motions, comp structures, CRM configurations, and GTM approaches requiring rapid integration without disrupting pipeline.</p>
+            </div>
+            <div class="case-block">
+              <h4>Problem</h4>
+              <p>Each acquisition risked rep attrition, pipeline loss, and delayed revenue recognition. Running five simultaneously amplified every coordination failure and left no margin for slow starts.</p>
+            </div>
+            <div class="case-block">
+              <h4>What I Built</h4>
+              <p>A repeatable GTM integration playbook covering CRM configuration, comp harmonization, territory and account mapping, product positioning alignment, and a unified reporting layer — applied and refined across six successive integrations.</p>
+            </div>
+            <div class="case-block">
+              <h4>Outcome</h4>
+              <p>Six full GTM integrations completed without material pipeline disruption. Each successive acquisition absorbed faster than the last as the playbook compounded. $6M+ in incremental partner ARR built from zero in parallel.</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="framework-footer">
-        <p>Full framework documentation on GitHub →</p>
-        <a href="https://github.com/bbussey000/three-engines-revops"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="btn-outline">
-          View Framework
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </a>
       </div>
     </div>
   </section>
@@ -714,46 +614,25 @@
   <section id="writing">
     <div class="container">
       <div class="writing-header">
-        <p class="section-label">Writing</p>
-        <h2>Published Work</h2>
+        <p class="eyebrow">Writing</p>
+        <h2>Revenue Operations &amp; AI Adoption</h2>
+        <p>Two threads: operating revenue infrastructure at scale, and closing the gap between AI power users and everyone else.</p>
       </div>
 
       <div class="articles-list">
-        <!-- Article 1 — placeholder -->
         <div class="article-row placeholder">
+          <span class="article-tag">RevOps</span>
           <div>
-            <p class="article-title">AI Infrastructure for GTM Teams</p>
-            <p class="article-meta">Article &nbsp;·&nbsp; Link coming soon</p>
+            <p class="article-title">Writing in progress</p>
+            <p class="article-meta">First post coming soon</p>
           </div>
           <span class="article-arrow">↗</span>
         </div>
-
-        <!-- Article 2 — placeholder -->
         <div class="article-row placeholder">
+          <span class="article-tag ai">AI Adoption</span>
           <div>
-            <p class="article-title">Building Agentic GTM Operating Models</p>
-            <p class="article-meta">Article &nbsp;·&nbsp; Link coming soon</p>
-          </div>
-          <span class="article-arrow">↗</span>
-        </div>
-
-        <!-- Podcast -->
-        <a href="https://linkedin.com/in/brandonbussey"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="article-row">
-          <div>
-            <p class="article-title">RevOps Rockstars Podcast</p>
-            <p class="article-meta">Featured Guest &nbsp;·&nbsp; Revenue Operations</p>
-          </div>
-          <span class="article-arrow">↗</span>
-        </a>
-
-        <!-- Speaking -->
-        <div class="article-row placeholder">
-          <div>
-            <p class="article-title">Snowforce — GTM AI Operating Models</p>
-            <p class="article-meta">Conference Talk &nbsp;·&nbsp; Salesforce Ecosystem</p>
+            <p class="article-title">Writing in progress</p>
+            <p class="article-meta">First post coming soon</p>
           </div>
           <span class="article-arrow">↗</span>
         </div>
@@ -763,13 +642,32 @@
 
   <hr class="divider" />
 
+  <!-- ── ADVISORY ───────────────────────────────────────────────────── -->
+  <section id="advisory">
+    <div class="container">
+      <div>
+        <p class="eyebrow">Advisory</p>
+        <h2>Advisory &amp; Consulting</h2>
+        <p>Selective advisory work for PE-backed and growth-stage SaaS companies on revenue operations, AI governance, pricing, and partner strategy.</p>
+      </div>
+      <a href="mailto:brandon@bbussey.com" class="btn-outline">
+        Inquire
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
   <!-- ── CONNECT ────────────────────────────────────────────────────── -->
   <section id="connect">
     <div class="container">
-      <h2>Let's<br /><span>connect.</span></h2>
+      <h2>Let's connect.</h2>
       <p>
-        If you're building or investing in PE-backed B2B SaaS and need
-        an AI-first GTM operator, start here.
+        Open to operating executive roles in Revenue Operations or broader cross-functional
+        leadership, and select advisory engagements.
       </p>
       <a href="https://linkedin.com/in/brandonbussey"
          target="_blank"
@@ -786,8 +684,8 @@
   <!-- ── FOOTER ─────────────────────────────────────────────────────── -->
   <footer>
     <div class="container">
-      <p>Brandon Bussey &nbsp;·&nbsp; AI-First RevOps Executive</p>
-      <p>Tampa, FL &nbsp;·&nbsp; Remote</p>
+      <p>Brandon Bussey · Operating Executive, Revenue Infrastructure</p>
+      <p>Tampa, FL · Remote</p>
     </div>
   </footer>
 
