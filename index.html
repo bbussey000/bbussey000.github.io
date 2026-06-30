@@ -189,33 +189,63 @@
       line-height: 1.15;
       margin-bottom: 1.5rem;
     }
-    .about-companies {
-      display: flex;
-      flex-direction: column;
-      margin-top: 1.25rem;
-    }
-    .company-item {
-      font-size: 0.78rem;
-      letter-spacing: 0.03em;
+    .about-intro {
       color: var(--ink-soft);
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .company-item:first-child { border-top: 1px solid var(--line); }
-    .company-item .tag {
-      font-size: 0.62rem;
-      color: var(--teal);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-left: 0.5rem;
-    }
-    .about-right p {
-      color: var(--ink-soft);
-      margin-bottom: 1.1rem;
       font-size: clamp(0.93rem, 1.4vw, 1rem);
       line-height: 1.72;
+      margin-bottom: 2.5rem;
     }
-    .about-right p:last-child { margin-bottom: 0; }
+
+    /* ─── CAREER TIMELINE ────────────────────────────────────────── */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .phase {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 0 2rem;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+    .phase:first-child { border-top: 1px solid var(--line); }
+    .phase-left { display: flex; flex-direction: column; gap: 0.2rem; padding-top: 0.05rem; }
+    .phase-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .phase-companies {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+    .phase-companies .current {
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      font-family: var(--sans);
+      vertical-align: middle;
+      margin-left: 0.4rem;
+    }
+    .phase-desc {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      padding-top: 0.1rem;
+    }
+
+    @media (max-width: 760px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .phase { grid-template-columns: 1fr; gap: 0.35rem; }
+    }
 
     /* ─── SELECTED WORK ──────────────────────────────────────────── */
     #work { background: var(--sand); }
@@ -313,32 +343,82 @@
 
     /* ─── ADVISORY ───────────────────────────────────────────────── */
     #advisory { background: var(--sand); }
-    #advisory .container {
+    .advisory-grid {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 2rem;
-      align-items: center;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 4rem;
+      align-items: start;
     }
     #advisory h2 {
       font-size: clamp(1.4rem, 2.4vw, 1.8rem);
       margin-bottom: 0.6rem;
     }
-    #advisory p { color: var(--ink-soft); max-width: 500px; font-size: 0.95rem; }
-    .btn-outline {
+    #advisory .advisory-intro p { color: var(--ink-soft); font-size: 0.95rem; line-height: 1.7; }
+
+    .advisory-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .form-field label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .form-field input,
+    .form-field textarea {
+      background: var(--paper);
+      border: 1px solid var(--sand-deep);
+      border-radius: var(--r);
+      padding: 0.7rem 0.9rem;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      color: var(--ink);
+      width: 100%;
+      transition: border-color 0.15s;
+      resize: vertical;
+    }
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: var(--muted); }
+    .form-field input:focus,
+    .form-field textarea:focus {
+      outline: none;
+      border-color: var(--teal);
+    }
+    .btn-submit {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      border: 1.5px solid var(--teal);
-      color: var(--teal);
-      font-size: 0.8rem;
+      align-self: flex-start;
+      background: var(--teal);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 0.82rem;
       font-weight: 600;
-      letter-spacing: 0.03em;
-      padding: 0.75rem 1.5rem;
+      padding: 0.8rem 1.5rem;
+      border: none;
       border-radius: var(--r);
-      white-space: nowrap;
-      transition: background 0.15s, color 0.15s;
+      cursor: pointer;
+      transition: background 0.15s;
     }
-    .btn-outline:hover { background: var(--teal); color: var(--white); text-decoration: none; }
+    .btn-submit:hover { background: #235f5f; }
+
+    @media (max-width: 760px) {
+      .advisory-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
 
     /* ─── CONNECT ────────────────────────────────────────────────── */
     #connect { background: var(--teal-dark); }
@@ -440,10 +520,7 @@
           <p class="eyebrow">Operating Executive · Revenue Infrastructure</p>
           <h1>Revenue that <em>holds</em><br/>under board scrutiny.</h1>
           <p class="hero-sub">
-            I build and run the GTM operating systems that PE-backed SaaS companies
-            depend on — AI governance, M&amp;A integration, forecasting infrastructure,
-            and the comp and partner programs that hold them together.
-            20 years across RevOps and GTM.
+            I build revenue infrastructure for complex B2B tech — multi-product, multi-segment, mid-integration. AI governance, M&amp;A, forecasting, and the programs that hold it together. 20 years across RevOps and GTM.
           </p>
         </div>
         <img class="headshot" src="headshot.png" alt="Brandon Bussey" />
@@ -478,41 +555,60 @@
   <!-- ── ABOUT ─────────────────────────────────────────────────────── -->
   <section id="about">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-left">
-          <p class="eyebrow">Background</p>
-          <h2>Operator across finance and GTM.</h2>
-          <div class="about-companies">
-            <div class="company-item">Advantive <span class="tag">Current</span></div>
-            <div class="company-item">Unicorn Revenue Operations</div>
-            <div class="company-item">Entrata</div>
-            <div class="company-item">Lucid Software</div>
-            <div class="company-item">Qualtrics</div>
-            <div class="company-item">Amazon · Concur</div>
+      <p class="eyebrow">Background</p>
+      <h2 style="font-size: clamp(1.6rem, 2.8vw, 2.1rem); margin-bottom: 1.1rem;">A career built in phases, each one compounding the last.</h2>
+      <p class="about-intro">My career has been a repeating pattern: take a fragmented, reactive revenue function and rebuild it as a proactive operating system. The tools and scale have changed — the discipline hasn't.</p>
+
+      <div class="timeline">
+
+        <div class="phase">
+          <div class="phase-left">
+            <span class="phase-label">FP&amp;A Foundations</span>
+            <span class="phase-companies">Concur · Amazon</span>
           </div>
+          <p class="phase-desc">Revenue modeling, G&amp;A forecasting, and global sales analytics at scale. Built the financial rigor that everything else runs on — including CFO-level forecast models used for quarterly investor guidance.</p>
         </div>
 
-        <div class="about-right">
-          <p>
-            My career has been a repeating pattern: take a fragmented, reactive revenue
-            function and rebuild it as a proactive operating system — one that holds up
-            under board scrutiny because the finance logic and the GTM execution were
-            designed together, not bolted on after the fact. I've done this six times
-            across PE-backed and enterprise environments.
-          </p>
-          <p>
-            At Advantive, a PE-backed vertical software platform, I serve as VP of Revenue
-            Operations, leading strategy and performance, revenue enablement, revenue systems,
-            and revenue analytics across the go-to-market organization. That includes building
-            the company's AI governance model, deploying AI-native tooling across the GTM org,
-            and running six M&amp;A integrations without pipeline disruption.
-          </p>
-          <p>
-            Before Advantive, I was a partner at Unicorn Revenue Operations, a GTM advisory
-            practice, building revenue functions across marketing, renewals, sales, pricing,
-            deal desk, and billing for multiple PE-backed SaaS companies.
-          </p>
+        <div class="phase">
+          <div class="phase-left">
+            <span class="phase-label">Into the GTM</span>
+            <span class="phase-companies">Qualtrics</span>
+          </div>
+          <p class="phase-desc">Finance logic met go-to-market execution. Built forecasting infrastructure, a competitive intelligence program, and the sales performance systems that drove 50% YoY new sales growth over six consecutive quarters.</p>
         </div>
+
+        <div class="phase">
+          <div class="phase-left">
+            <span class="phase-label">Build at Scale</span>
+            <span class="phase-companies">Lucid Software</span>
+          </div>
+          <p class="phase-desc">Four years, four consecutive years of 50%+ ARR growth. Built a 43-person global RevOps org from scratch across NA, EMEA, and APAC — forecasting, CPQ, pricing, sales specialization, and international expansion.</p>
+        </div>
+
+        <div class="phase">
+          <div class="phase-left">
+            <span class="phase-label">Turnaround &amp; Infrastructure</span>
+            <span class="phase-companies">Entrata</span>
+          </div>
+          <p class="phase-desc">Inherited nothing. Built forecasting to &lt;3% variance, a custom CPQ for site-level selling, a bundle pricing framework that drove 13% ARPU lift, and the full GTM tech stack — from a standing start.</p>
+        </div>
+
+        <div class="phase">
+          <div class="phase-left">
+            <span class="phase-label">Operator for Hire</span>
+            <span class="phase-companies">Unicorn Revenue Operations</span>
+          </div>
+          <p class="phase-desc">Applied the playbook across multiple companies simultaneously — GTM builds, funnel diagnostics, pricing strategy, interim CRO, and CRM rebuilds for a range of B2B tech companies.</p>
+        </div>
+
+        <div class="phase">
+          <div class="phase-left">
+            <span class="phase-label">Compounded at Scale</span>
+            <span class="phase-companies">Advantive <span class="current">Current</span></span>
+          </div>
+          <p class="phase-desc">Everything above, running in parallel. Eight M&amp;A integrations without pipeline disruption, AI governance built from zero, PS and CS infrastructure stood up for the first time, and a multi-LOB operating model across a high-inorganic-growth platform.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -571,7 +667,7 @@
             </div>
             <div class="case-block">
               <h4>What I Built</h4>
-              <p>Restructured bootcamp certification around actual readiness indicators. Layered an AI system on top: machine-generated, rubric-driven onboarding plans using Hyperbound simulation tracks built from the company's own winning conversations, segmented by vertical.</p>
+              <p>Restructured bootcamp certification around actual readiness indicators. Layered an AI system on top: machine-generated, rubric-driven onboarding plans built from the company's own winning conversations, segmented by vertical.</p>
             </div>
             <div class="case-block">
               <h4>Outcome</h4>
@@ -646,17 +742,44 @@
   <!-- ── ADVISORY ───────────────────────────────────────────────────── -->
   <section id="advisory">
     <div class="container">
-      <div>
-        <p class="eyebrow">Advisory</p>
-        <h2>Advisory &amp; Consulting</h2>
-        <p>Selective advisory work for PE-backed and growth-stage SaaS companies on revenue operations, AI governance, pricing, and partner strategy.</p>
+      <div class="advisory-grid">
+        <div class="advisory-intro">
+          <p class="eyebrow">Advisory</p>
+          <h2>Advisory &amp; Consulting</h2>
+          <p>Selective advisory work for PE-backed and growth-stage SaaS companies on revenue operations, AI governance, pricing, and partner strategy.</p>
+        </div>
+
+        <form
+          class="advisory-form"
+          action="https://formspree.io/f/mqevlyoy"
+          method="POST"
+        >
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Company name" />
+          </div>
+          <div class="form-field">
+            <label for="message">What are you working on?</label>
+            <textarea id="message" name="message" rows="4" placeholder="Brief description of the challenge or engagement you have in mind..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            Send Inquiry
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </form>
       </div>
-      <a href="mailto:brandon@bbussey.com" class="btn-outline">
-        Inquire
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-          <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </a>
     </div>
   </section>
 
